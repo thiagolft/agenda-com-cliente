@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Agendar Reunião</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Escolha um responsável</h1>
+    <div class="team">
+      <div class="person" onclick="scheduleMeeting('Lucas Teixeira')">
+        <img src="assets/img/lucas-img.png" alt="Lucas Teixeira">
+        <p>Lucas Teixeira</p>
+      </div>
+      <div class="person" onclick="scheduleMeeting('Eduardo Venâncio')">
+        <img src="assets/img/dudu-img.png" alt="Eduardo Venâncio">
+        <p>Eduardo Venâncio</p>
+      </div>
+      <div class="person" onclick="scheduleMeeting('Vanessa Fernandes')">
+        <img src="assets/img/vanessa-img.png" alt="Vanessa Fernandes">
+        <p>Vanessa Fernandes</p>
+      </div>
+      <div class="person" onclick="scheduleMeeting('Maria Rangel')">
+        <img src="assets/img/maria-rangel-img.png" alt="Maria Rangel">
+        <p>Maria Rangel</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scheduleMeeting(name) {
+      // Redireciona para um link de agendamento relacionado ao Google Agenda
+      // Por exemplo, se a agenda de cada um for compartilhada
+      const calendarLinks = {
+        'Lucas Teixeira': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Lucas+Teixeira',
+        'Eduardo Venâncio': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Eduardo+Venâncio',
+        'Vanessa Fernandes': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Vanessa+Fernandes',
+        'Maria Rangel': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Maria+Rangel'
+      };
+
+      if (calendarLinks[name]) {
+        window.open(calendarLinks[name], '_blank');
+      } else {
+        alert('Responsável não encontrado!');
+      }
+    }
+  </script>
+</body>
+</html>
