@@ -1,50 +1,224 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Agendar Reunião</title>
+  <title>Agendamento de Reunião 🚀</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .screen {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    .screen.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    
+    .option-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    
+    .option-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      min-width: 180px;
+    }
+    
+    .option-btn:hover {
+      background-color: #0056b3;
+    }
+    
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .member {
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    
+    .member:hover {
+      transform: scale(1.05);
+    }
+    
+    .member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #007bff;
+      object-fit: cover;
+    }
+    
+    .member-name {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+    
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .back-btn:hover {
+      background-color: #1e7e34;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .option-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .member img {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .member-name {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Escolha um responsável</h1>
-    <div class="team">
-      <div class="person" onclick="scheduleMeeting('Lucas Teixeira')">
-        <img src="assets/img/lucas-img.png" alt="Lucas Teixeira">
-        <p>Lucas Teixeira</p>
+    
+    <!-- Tela Home -->
+    <div id="home" class="screen active">
+      <div class="header">
+        <h1>Bem-vindo! 😊</h1>
+        <p>Escolha a área para agendar sua reunião:</p>
       </div>
-      <div class="person" onclick="scheduleMeeting('Eduardo Venâncio')">
-        <img src="assets/img/dudu-img.png" alt="Eduardo Venâncio">
-        <p>Eduardo Venâncio</p>
-      </div>
-      <div class="person" onclick="scheduleMeeting('Vanessa Fernandes')">
-        <img src="assets/img/vanessa-img.png" alt="Vanessa Fernandes">
-        <p>Vanessa Fernandes</p>
-      </div>
-      <div class="person" onclick="scheduleMeeting('Maria Rangel')">
-        <img src="assets/img/maria-rangel-img.png" alt="Maria Rangel">
-        <p>Maria Rangel</p>
+      <div class="option-container" style="justify-content: center;">
+        <button class="option-btn" onclick="showSection('comercial')">Área Comercial 💼</button>
+        <button class="option-btn" onclick="showSection('suporte')">Suporte 🛠️</button>
       </div>
     </div>
+    
+    <!-- Tela Área Comercial -->
+    <div id="comercial" class="screen">
+      <div class="header">
+        <h1>Área Comercial 💼</h1>
+        <p>Selecione um dos nossos consultores para agendar sua reunião:</p>
+      </div>
+      <div class="grid">
+        <!-- Lucas -->
+        <div class="member" onclick="openLink('https://calendly.com/grupolft2')">
+          <img src="assets/img/lucas-img.png" alt="Lucas">
+          <div class="member-name">Lucas</div>
+        </div>
+        <!-- Vanessa -->
+        <div class="member" onclick="openLink('https://calendly.com/grupolft2')">
+          <img src="assets/img/vanessa-img.png" alt="Vanessa">
+          <div class="member-name">Vanessa</div>
+        </div>
+        <!-- Eduardo -->
+        <div class="member" onclick="openLink('https://calendly.com/grupolft2')">
+          <img src="assets/img/dudu-img.png" alt="Eduardo">
+          <div class="member-name">Eduardo</div>
+        </div>
+        <!-- Maria Rangel -->
+        <div class="member" onclick="openLink('https://calendly.com/grupolft2')">
+          <img src="assets/img/maria-rangel-img.png" alt="Maria Rangel">
+          <div class="member-name">Maria Rangel</div>
+        </div>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">⬅️ Voltar</button>
+    </div>
+    
+    <!-- Tela Suporte -->
+    <div id="suporte" class="screen">
+      <div class="header">
+        <h1>Suporte 🛠️</h1>
+        <p>Selecione um dos nossos especialistas para agendar sua reunião:</p>
+      </div>
+      <div class="grid">
+        <!-- Karina Ignacio -->
+        <div class="member" onclick="openLink('https://wa.me/553299031530')">
+          <img src="assets/img/karina-img.png" alt="Karina Ignacio">
+          <div class="member-name">Karina Ignacio</div>
+        </div>
+        <!-- Natalia Dutra -->
+        <div class="member" onclick="openLink('https://wa.me/553299467261')">
+          <img src="assets/img/natalia-img.png" alt="Natalia Dutra">
+          <div class="member-name">Natalia Dutra</div>
+        </div>
+      </div>
+      <button class="back-btn" onclick="showSection('home')">⬅️ Voltar</button>
+    </div>
+    
   </div>
-
+  
   <script>
-    function scheduleMeeting(name) {
-      // Redireciona para um link de agendamento relacionado ao Google Agenda
-      // Por exemplo, se a agenda de cada um for compartilhada
-      const calendarLinks = {
-        'Lucas Teixeira': 'https://calendly.com/grupolft2',
-        'Eduardo Venâncio': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Eduardo+Venâncio',
-        'Vanessa Fernandes': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Vanessa+Fernandes',
-        'Maria Rangel': 'https://calendar.google.com/calendar/u/0/r/eventedit?text=Reunião+com+Maria+Rangel'
-      };
-
-      if (calendarLinks[name]) {
-        window.open(calendarLinks[name], '_blank');
-      } else {
-        alert('Responsável não encontrado!');
-      }
+    // Função para alternar entre as telas
+    function showSection(sectionId) {
+      const screens = document.querySelectorAll('.screen');
+      screens.forEach(screen => {
+        screen.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+    
+    // Função para abrir o link informado (Calendly ou WhatsApp)
+    function openLink(url) {
+      window.open(url, "_blank");
     }
   </script>
 </body>
