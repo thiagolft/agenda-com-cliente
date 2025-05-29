@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, Users, ArrowLeft, CalendarDays, MessageSquare } from 'lucide-react';
 
 const consultants = [
-  { name: 'Lucas', imgSrc: 'https://agenda-com-cliente.vercel.app/assets/img/lucas-img.png', link: 'https://calendly.com/grupolft2' },
-  { name: 'Vanessa', imgSrc: 'https://agenda-com-cliente.vercel.app/assets/img/vanessa-img.png', link: 'https://calendly.com/grupolft2' },
-  { name: 'Eduardo', imgSrc: 'https://agenda-com-cliente.vercel.app/assets/img/dudu-img.png', link: 'https://calendly.com/grupolft2' },
-  { name: 'Maria Rangel', imgSrc: 'https://agenda-com-cliente.vercel.app/assets/img/maria-rangel-img.png', link: 'https://calendly.com/grupolft2' },
+  { name: 'Lucas', imgSrc: 'https://i.imgur.com/PyQ4HJV.png', link: 'https://calendly.com/grupolft2' },
+  { name: 'Vanessa', imgSrc: 'https://i.imgur.com/vlrRYUF.png', link: 'https://calendly.com/grupolft2' },
+  { name: 'Eduardo', imgSrc: 'https://i.imgur.com/cmKafzo.png', link: 'https://calendly.com/grupolft2' },
+  { name: 'Maria Rangel', imgSrc: 'https://i.imgur.com/eEjfwDR.png', link: 'https://calendly.com/grupolft2' },
 ];
 
 const supportTeam = [
-  { name: 'Karina', imgSrc: 'https://agenda-com-cliente.vercel.app/assets/img/karina-img.png', link: 'https://api.whatsapp.com/send/?phone=553298211234&text&type=phone_number&app_absent=0' },
-  { name: 'Natalia', imgSrc: 'https://agenda-com-cliente.vercel.app/assets/img/natalia-img.png', link: 'https://api.whatsapp.com/send/?phone=553298211234&text&type=phone_number&app_absent=0' },
+  { name: 'Karina', imgSrc: 'https://i.imgur.com/ySM0ZkS.png', link: 'https://api.whatsapp.com/send/?phone=553298211234&text&type=phone_number&app_absent=0' },
+  { name: 'Natalia', imgSrc: 'https://i.imgur.com/gaBO2PX.png', link: 'https://api.whatsapp.com/send/?phone=553298211234&text&type=phone_number&app_absent=0' },
 ];
 
 const PageContainer = ({ children, hasFooterSpace = true, isHome = false }) => (
