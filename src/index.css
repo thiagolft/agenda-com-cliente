@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0B1120; /* Um azul bem escuro, quase preto */
+  color: #E0E0E0; /* Um branco suave */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 224 44% 10%; /* Azul escuro (0B1120) */
+    --foreground: 0 0% 88%; /* Branco suave (E0E0E0) */
+
+    --card: 225 30% 15%; /* Azul um pouco mais claro para cards (1A233A) */
+    --card-foreground: 0 0% 95%; /* Branco para texto em cards (F2F2F2) */
+ 
+    --popover: 224 44% 10%;
+    --popover-foreground: 0 0% 88%;
+ 
+    --primary: 217 91% 60%; /* Azul vibrante (2563EB) */
+    --primary-foreground: 0 0% 98%; /* Branco para texto em botões primários */
+ 
+    --secondary: 200 88% 57%; /* Azul céu (38BDF8) */
+    --secondary-foreground: 224 44% 10%; /* Azul escuro para texto em botões secundários */
+ 
+    --muted: 225 20% 30%; /* Azul acinzentado para texto muted (3D4A66) */
+    --muted-foreground: 225 15% 55%; /* Cinza azulado mais claro (7C89A3) */
+ 
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 72% 51%; /* Vermelho para ações destrutivas (E53E3E) */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 225 20% 25%; /* Azul acinzentado para bordas (313B52) */
+    --input: 225 20% 20%; /* Azul mais escuro para inputs (242C40) */
+    --ring: 217 91% 60%; /* Azul vibrante para anel de foco */
+ 
+    --radius: 0.75rem;
+  }
+ 
+  .dark { /* Mantendo a mesma paleta, pois já é escura */
+    --background: 224 44% 10%;
+    --foreground: 0 0% 88%;
+ 
+    --card: 225 30% 15%;
+    --card-foreground: 0 0% 95%;
+ 
+    --popover: 224 44% 10%;
+    --popover-foreground: 0 0% 88%;
+ 
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 200 88% 57%;
+    --secondary-foreground: 224 44% 10%;
+ 
+    --muted: 225 20% 30%;
+    --muted-foreground: 225 15% 55%;
+ 
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 225 20% 25%;
+    --input: 225 20% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.7);
+  border-radius: 10px;
+  border: 2px solid hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Adicionando um gradiente sutil ao body para mais profundidade */
+body {
+  background-image: linear-gradient(to bottom right, #0B1120, #11182c, #0B1120);
+}
