@@ -138,7 +138,7 @@ function App() {
         {renderPage()}
       </AnimatePresence>
       <footer className="fixed bottom-0 left-0 w-full py-3 sm:py-4 bg-slate-900/80 backdrop-blur-sm text-center z-10">
-        <p className="text-slate-400 text-xs sm:text-sm">&copy; {new Date().getFullYear()} LFT Gestão. Todos os direitos reservados.</p>
+        <p className="text-slate-400 text-xs sm:text-sm">&copy; {new Date().getFullYear()} LFT Gestão de Risco | Planejamento Financeiro. Todos os direitos reservados.</p>
       </footer>
     </div>
   );
