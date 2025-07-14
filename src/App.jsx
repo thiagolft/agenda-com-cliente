@@ -6,7 +6,7 @@ const consultants = [
   { name: 'Lucas', imgSrc: 'https://i.imgur.com/PyQ4HJV.png', link: 'https://calendly.com/grupolft2' },
   { name: 'Vanessa', imgSrc: 'https://i.imgur.com/vlrRYUF.png', link: 'https://calendly.com/grupolft2' },
   { name: 'Eduardo', imgSrc: 'https://i.imgur.com/cmKafzo.png', link: 'https://calendly.com/grupolft2' },
-  { name: 'Maria Rangel', imgSrc: 'https://i.imgur.com/v9LFAOy.jpeg', link: 'https://calendly.com/grupolft2' },
+  { name: 'Maria Rangel', imgSrc: 'https://i.imgur.com/6qqpYjP.jpeg', link: 'https://calendly.com/grupolft2' },
 ];
 
 const supportTeam = [
